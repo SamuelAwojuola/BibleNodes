@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>BibleNodes Graph-03</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style/bibleNodes.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <!-- ContextMenu for rightClick on any divNode -->
+        <div id="nodeDivCustomContextMenu" class="customContextMenu">
+            <button id="contextMenuLink" onclick="nodeToConnectCurrentNodeTo()">Link</button>
+            <button id="contextMenuClone" onclick="cloneNodeDiv()">Clone</button>
+            <button id="contextMenuEdit" onclick="makeNodeDivEditable()">Edit</button>
+            <button id="contextMenuEdit" onclick="deleteNodeDiv()">Delete</button>
+        </div>
+        <!-- ContextMenu for rightClick on nodeCanvas but not on a divNode -->
+        <div id="canvasCustomContextMenu" class="customContextMenu">
+            <button id="contextMenuNewNode" onclick="createNewNode()">NewNode</button>
+        </div>
+
+        <!-- <header>
+            <button onclick="nodeToConnectCurrentNodeTo()">Connect2?</button>
+            <button ondblclick="nodeToConnectCurrentNodeTo()">Connect2?</button>
+        </header> -->
+        <!-- Canvas where divNodes are appended -->
+        <div id="nodeCanvas">
+            <svg id="svg" width="2000" height="2000" viewBox="0 0 2000 2000"></svg>
+
+            <div id="pointNode"></div>
+            <div class="divNode">drag1</div>
+            <div class="divNode" style="top: 200px;" >drag2</div>
+            <div class="divNode" style="left: 200px;">drag3</div>
+            <div class="divNode" style="left: 200px; top: 200px;">drag4</div>
+            <div class="divNode" style="left: 400px; top: 100px;">drag5</div>
+        </div>
+
+        <!-- Section for notes to attache to nodes and connections -->
+        <div id="connectionDetails">
+            <div id="pointNode"></div>
+            <div class="connectionDetails">drag1</div>
+            <div class="connectionDetails">drag2</div>
+            <div class="connectionDetails">drag3</div>
+            <div class="connectionDetails">drag4</div>
+            <div class="connectionDetails">drag5</div>
+        </div>
+
+       <script src="script/svgPathGeneratorFromTwoPoints.js" async defer></script>
+       <!-- <script src="script/elm-XY-Coord[fromElementsParents].js" async defer></script> -->
+       <script src="script/bibleNodes-7.js" async defer></script>
+       <script src="script/bibleNodes-contextMenu.js" async defer></script>
+       <!-- <script src="script/bibleNodes-findSVGpath.js" async defer></script> -->
+       <script src="script/bibleNodes-drawSVGlines-04.js" async defer></script>
+       <script src="script/bibleNodes-nodesToConnect.js" async defer></script>
+    </body>
+</html>

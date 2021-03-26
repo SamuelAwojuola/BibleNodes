@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>BibleNodes Graph-01</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="bibleNodes.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div id="customContextMenu">
+            <button onclick="nodeToConnectCurrentNodeTo()">Connect2?</button>
+        </div>
+
+        <header>
+            <button onclick="nodeToConnectCurrentNodeTo()">Connect2?</button>
+            <!-- <button ondblclick="nodeToConnectCurrentNodeTo()">Connect2?</button> -->
+        </header>
+        
+        <div id="nodeCanvas">
+            <svg id="svg"></svg>
+            <div id="pointNode"></div>
+            <div class="divNode" connectTo="node3">drag1</div>
+            <div class="divNode" style="top: 200px;" connectTo="node1">drag2</div>
+            <div class="divNode" style="left: 200px;" connectTo="node2">drag3</div>
+            <div class="divNode" style="left: 200px; top: 200px;" connectTo="node2">drag4</div>
+            <div class="divNode" style="left: 400px; top: 100px;" >drag4</div>
+        </div>
+
+       <script src="connectTwoElementsWithCurvedLine.js" async defer></script>
+       <!-- <script src="elm-XY-Coord[fromElementsParents].js" async defer></script> -->
+       <script src="bibleNodes-7.js" async defer></script>
+       <script src="bibleNodes-contextMenu.js" async defer></script>
+       <!-- <script src="bibleNodes-findSVGpath.js" async defer></script> -->
+       <script src="bibleNodes-drawSVGlines-02.js" async defer></script>
+       <script src="bibleNodes-nodesToConnect.js" async defer></script>
+    </body>
+</html>

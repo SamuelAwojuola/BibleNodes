@@ -1,0 +1,80 @@
+html, body {
+    margin: 0;
+}
+
+header {
+    position:relative;
+    margin-top: 0px;
+    width: 100%;
+    background-color: aliceblue;
+    box-shadow: 0px 0px 0px 0.5px grey inset,
+        0px 0px 0px 0.5px grey inset,
+        10px 10px 2.5px -1px rgb(0, 0, 0, 75%);
+}
+
+#customContextMenu {
+    position:absolute;
+    display: none;
+    width: 50px;
+    font-size: 10px;
+    background-color: white;
+    border-radius: 1px;
+    /* border: 0.5px solid rgb(226, 226, 226); */
+    box-shadow:
+        1px 5px 3px -2px #adadad8a,
+        -1px 0px 3px -2px #adadad8a;
+    z-index: 99;
+}
+
+#customContextMenu:hover {
+    cursor: pointer;
+    display: block;
+}
+
+#svg {
+    width: 100%;
+    height: 100%;
+}
+
+#pointNode {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding:5px;
+    background-color: red;
+    z-index: 80;
+    pointer-events: none;
+}
+
+#nodeCanvas {
+    position: relative;
+    background-color: transparent;
+    /* background-color: beige; */
+    /* border: 1px solid grey;? */
+    box-shadow: 0px 0px 0px 0.5px grey inset,
+        0px 0px 0px 0.5px grey inset,
+        10px 10px 2.5px -1px rgb(0, 0, 0, 75%);
+    height: 100vh;
+    height: 500px;
+    width: 500px;
+}
+
+.divNode {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    height: 50px;
+    /* height: 50px;
+    width: 50px; */
+    text-align:center;
+    text-transform: capitalize;
+    /* border: 1px solid black; */
+    padding: 10px;
+    background-color: pink;
+    box-shadow: 0px 0px 0px 0.5px grey inset,
+        0px 0px 0px 0.5px grey inset,
+        10px 10px 2.5px -1px rgba(0, 0, 0, 75%);
+    z-index: 2;
+}

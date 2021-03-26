@@ -1,0 +1,202 @@
+html,
+body {
+    margin: 0;
+}
+
+body {
+    display: grid;
+    grid-auto-columns: 1fr auto;
+    column-gap: 50px;
+}
+
+header {
+    position: relative;
+    margin-top: 0px;
+    width: 100%;
+    background-color: aliceblue;
+    box-shadow: 0px 0px 0px 0.5px grey inset,
+        0px 0px 0px 0.5px grey inset,
+        10px 10px 2.5px -1px rgb(0, 0, 0, 75%);
+}
+
+.customContextMenu {
+    position: absolute;
+    display: none;
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(auto, auto);
+    max-width: max-content;
+    font-size: 10px;
+    background-color: white;
+    border-radius: 1px;
+    /* border: 0.5px solid rgb(226, 226, 226); */
+    box-shadow:
+        1px 5px 3px -2px #adadad8a,
+        -1px 0px 3px -2px #adadad8a;
+    z-index: 99;
+}
+
+.customContextMenu:hover {
+    cursor: pointer;
+    display: grid;
+}
+
+.customContextMenu button {
+    width: 100%;
+    text-align: left;
+}
+
+/* .customContextMenu button:not(:last-child){
+    border: 1px solid rgb(118, 118, 118);
+    border-bottom: 0;
+} */
+
+#svg {
+    /* width: 100%;
+    height: 100%; */
+    /* viewBox: 0 0 100 100; */
+}
+
+path {
+    marker-end: url(#arrowHead);
+}
+
+path:hover {
+    stroke: orangeRed;
+    transition:stroke 0.5s;
+}
+
+[nodeid]:hover {
+    background-color: rgb(255, 184, 158);
+    box-shadow:
+        0px 0px 0px 0.5px blue inset,
+        0px 0px 0px 0.5px blue inset,
+        5px 5px 2.5px -1px rgba(92, 92, 92, 0.75);
+    transform: scale(1.05);
+}
+
+[nodeid]:active {
+    background-color: rgb(255, 184, 158);
+    box-shadow:
+        0px 0px 0px 0.5px blue inset,
+        0px 0px 0px 0.5px blue inset,
+        5px 5px 2.5px -1px rgba(92, 92, 92, 0.75);
+    transform: scale(1);
+}
+
+#pointNode {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px;
+    background-color: red;
+    z-index: 80;
+    pointer-events: none;
+}
+
+#connectionDetails {
+    position: fixed;
+    display: block;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    border-left: 3px solid black;
+    -webkit-box-shadow: 0 0 10px 0 #000000;
+	-moz-box-shadow: 0 0 10px 0 #000000;
+	box-shadow: 0 0 10px 0 #000000;
+    z-index: 20;
+    /* transform: scale(1); */
+    transition-property: right;
+    transition-duration: 0.3s;
+    /* overflow-y: scroll; */
+}
+
+#connectionDetails button {
+    position:absolute;
+    left:-24px;
+    background-color: white;
+    border: 0;;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+    /* -webkit-box-shadow: 0 0 10px 0 #000000;
+	-moz-box-shadow: 0 0 10px 0 #000000; */
+	box-shadow: -1px -1px  10px -5px #000000;
+    border-bottom-left-radius: 5px;;
+}
+
+#connectionDetails > *:not(button) {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+#connectionDetails > h2 {
+    margin-top: 0;
+}
+
+#nodeCanvas {
+    /* position: relative; */
+    background-color: transparent;
+    background-color: beige;
+    /* border: 1px solid grey;? */
+    box-shadow:
+        0px 0px 0px 0.5px grey inset,
+        0px 0px 0px 0.5px grey inset,
+        10px 10px 2.5px -1px rgb(0, 0, 0, 75%);
+    height: 100%;
+    width: auto;
+}
+
+.divNode {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    height: auto;
+    border-radius: 5px;
+    /* width: 50px; */
+    /* border: 1px solid black; */
+    padding: 10px;
+    background-color: rgb(101, 206, 255);
+    box-shadow:
+        0px 0px 0px 0.5px grey inset,
+        0px 0px 0px 0.5px grey inset,
+        5px 5px 2.5px -1px rgba(80, 80, 80, 0.75);
+    z-index: 2;
+    font-weight: bolder;
+    text-align: center;
+    text-transform: capitalize;
+    transform: scale(1);
+    transition-property:background-color,transform;
+    transition-duration: 0.3s;
+    /* transition:transform 0.5s; */
+    /* tabindex: 0; */
+}
+
+.divNode a {
+    /* text-decoration: none; */
+    color: black;
+}
+
+#svgPathToolTip {
+    padding: 5px;
+    width: auto;
+    font-size: smaller;
+    background-color: white;
+    box-shadow: 1px 1px 50px 0px rgba(128, 128, 128, 0.486);
+    transition-property:opacity;
+    transition-duration: 0.5s;
+}
+
+.pathLabel {
+    padding: 5px;
+    font: Georgia, serif;
+    font-size: small;
+    font-weight: bolder;
+    border-radius: 2px;
+    color: black;
+    text-shadow: 1px 1px 2.5px white, 0 0 1em white, 0 0 0.1em white;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 1px 1px 5px 0px rgba(128, 128, 128, 0.486);
+    transition-property:opacity;
+    transition-duration: 0.5s
+}
